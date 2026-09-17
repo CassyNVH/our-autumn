@@ -163,7 +163,7 @@ button,.linkbtn{width:100%;border:0;border-radius:16px;padding:14px 16px;margin-
     <div id="summary"></div>
     <p class="soft">Если какая-то дата потом слетит из-за учёбы или работы, просто перенесём. Главное, что свидание не отменяется совсем.</p>
     <button class="primary" onclick="downloadCalendar()">сохранить выбранные даты 🍂</button>
-    <button class="secondary" onclick="sharePlan()">отправить Ксюше наш план 🤎</button>
+    <button class="secondary" onclick="sharePlan()">отправить Ксюше наш план</button>
     <button class="ghost" onclick="copyPlan()">скопировать сообщение</button>
     <p class="tiny" style="margin-top:14px">Сохраняются только те даты, которые ты сам выбрал. Это скорее «держим вечер в голове», а не клятва явиться по повестке.</p>
   </div>
@@ -192,16 +192,28 @@ function renderSummary(){
 }
 function fmt(s){return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'}).format(new Date(s))}
 function planText(){
- let t='Ксень, я всё выбрал 😌🍂\\n\\n';
- Object.values(choices).forEach(c=>t+=`🤎 ${fmt(c.start)} — ${c.title}\\n`);
- if(bonus)t+='\\nИ да. Последний намёк я тоже понял 👄🌹\\n';
- t+='\\nКороче, осень занята тобой.';
+ let t='Ксень, всё запланировал.
+
+';
+ Object.values(choices).forEach(c=>t+=`${fmt(c.start)} — ${c.title}
+`);
+ if(window.whiteParty==='yes') t+='
+На белой вечеринке буду ждать тебя, вход организую.
+';
+ if(window.whiteParty==='no') t+='
+На белую вечеринку не беру тебя 😭
+';
+ if(bonus) t+='
+Secret date — намёк понял.
+';
+ t+='
+Теперь осталось всё это реализовать.';
  return t;
 }
 async function sharePlan(){
  const text=planText();
- if(navigator.share){try{await navigator.share({title:'Наша осень 🍂',text});return}catch(e){}}
- await navigator.clipboard.writeText(text);toast('сообщение скопировано 🤎');
+ const tg='https://t.me/share/url?url='+encodeURIComponent('https://t.me/accrill')+'&text='+encodeURIComponent(text);
+ window.location.href=tg;
 }
 async function copyPlan(){await navigator.clipboard.writeText(planText());toast('сообщение скопировано 🤎')}
 function toast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
