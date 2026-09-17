@@ -183,7 +183,8 @@ function go(id){
 }
 function alt(id){document.getElementById(id).classList.toggle('hidden')}
 function details(id){document.getElementById(id).classList.toggle('hidden')}
-function choose(slot,title,start,end,loc,next){choices[slot]={title,start,end,loc};go(next)}
+function choose(slot,title,start,end,loc,next){
+ skippedEvents.delete(id);choices[slot]={title,start,end,loc};go(next)}
 function bonusYes(){bonus=true;document.getElementById('bonusHint').classList.remove('hidden')}
 function renderSummary(){
  const el=document.getElementById('summary');
@@ -209,8 +210,18 @@ async function copyPlan(){await navigator.clipboard.writeText(planText());toast(
 function toast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
 
 
+const skippedEvents=new Set();
+const dateEventIds=['e1','e2','e3','e5'];
 function skipEvent(id,next){
+ const selected=dateEventIds.filter(x=>choices[x]).length;
+ const skipped=skippedEvents.size;
+ const remaining=dateEventIds.length-selected-skipped-(skippedEvents.has(id)?0:1);
+ if(selected+remaining<2){
+   toast('не-а 😭 минимум два свидания со мной');
+   return;
+ }
  delete choices[id];
+ skippedEvents.add(id);
  toast('ладно 😭 это тогда пропускаем');
  go(next);
 }
