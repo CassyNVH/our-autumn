@@ -202,6 +202,8 @@ button,.linkbtn{width:100%;border:0;border-radius:16px;padding:14px 16px;margin-
 </section>
 
 <script>
+const skippedEvents=new Set();
+const dateEventIds=['e1','e2','e3','e5'];
 const choices={}; let bonus=false;
 const order=['intro','e1','e2','e3','e4','e5','bonus','final'];
 const prog=document.getElementById('progress');
@@ -244,13 +246,12 @@ async function copyPlan(){await navigator.clipboard.writeText(planText());toast(
 function toast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
 
 
-const skippedEvents=new Set();
-const dateEventIds=['e1','e2','e3','e5'];
 
 function organize(detailsId,id,title,start,end,loc){
- skippedEvents.delete(id);
+ if(typeof skippedEvents!=='undefined') skippedEvents.delete(id);
  choices[id]={title,start,end,loc};
- document.getElementById(detailsId).classList.remove('hidden');
+ const box=document.getElementById(detailsId);
+ if(box) box.classList.remove('hidden');
  toast('вот это мне нравится 👀 организатор');
 }
 function skipEvent(id,next){
