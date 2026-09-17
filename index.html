@@ -192,22 +192,12 @@ function renderSummary(){
 }
 function fmt(s){return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'}).format(new Date(s))}
 function planText(){
- let t='Ксень, всё запланировал.
-
-';
- Object.values(choices).forEach(c=>t+=`${fmt(c.start)} — ${c.title}
-`);
- if(window.whiteParty==='yes') t+='
-На белой вечеринке буду ждать тебя, вход организую.
-';
- if(window.whiteParty==='no') t+='
-На белую вечеринку не беру тебя 😭
-';
- if(bonus) t+='
-Secret date — намёк понял.
-';
- t+='
-Теперь осталось всё это реализовать.';
+ let t='Ксень, всё запланировал.\n\n';
+ Object.values(choices).forEach(c=>t+=`${fmt(c.start)} — ${c.title}\n`);
+ if(window.whiteParty==='yes') t+='\nНа белой вечеринке буду ждать тебя, вход организую.\n';
+ if(window.whiteParty==='no') t+='\nНа белую вечеринку не беру тебя.\n';
+ if(bonus) t+='\nSecret date — намёк понял.\n';
+ t+='\nТеперь осталось всё это реализовать.';
  return t;
 }
 async function sharePlan(){
