@@ -53,9 +53,9 @@ button,.linkbtn{width:100%;border:0;border-radius:16px;padding:14px 16px;margin-
     <p class="soft">Я почти уверена, что периодически всё равно буду смотреть на тебя.</p>
     <button class="primary" onclick="choose('e1','Шостакович в Филармонии','2026-09-25T19:00:00','2026-09-25T21:00:00','Малый зал Филармонии, Невский пр., 30','e2')">я свободен 👀</button>
     <button class="secondary" onclick="alt('a1')">блин, я не могу в этот день</button> <button class="secondary" onclick="skipEvent('e1','e2')">это вообще никак</button>
-    <button class="ghost" onclick="details('d1')">давай это организую я</button>
+    <button class="ghost" onclick="organize('d1','e1','Шостакович в Филармонии','2026-09-25T19:00:00','2026-09-25T21:00:00','Малый зал Филармонии, Невский пр., 30')">давай это организую я</button>
     <div id="a1" class="altbox hidden"><h3>ладно 🙄 план B</h3><p>30 сентября · 19:00<br><b>«Хиты любви» в Малом зале</b></p><p class="tiny">Вальсы, танго, музыка из «Ромео и Джульетты» и прочая подозрительно романтичная культурная деятельность.</p><button class="primary" onclick="choose('e1','Хиты любви · Малый зал Филармонии','2026-09-30T19:00:00','2026-09-30T21:00:00','Малый зал Филармонии, Невский пр., 30','e2')">вот сюда могу</button></div>
-    <div id="d1" class="details hidden"><b>Организационная часть</b><p>Билеты на основной концерт: от 500 ₽. На альтернативу: от 750 ₽. Лучше брать заранее.</p><a class="linkbtn primary" target="_blank" href="https://www.philharmonia.spb.ru/afisha/1078275/">билеты на 25.09</a><a class="linkbtn secondary" target="_blank" href="https://www.philharmonia.spb.ru/afisha/small/pc/?ev_m=9&ev_y=2026">афиша Филармонии</a></div>
+    <div id="d1" class="details hidden"><b>Организационная часть</b><p>Билеты на основной концерт: от 500 ₽. На альтернативу: от 750 ₽. Лучше брать заранее.</p><a class="linkbtn primary" target="_blank" href="https://www.philharmonia.spb.ru/afisha/1078275/">билеты на 25.09</a><a class="linkbtn secondary" target="_blank" href="https://www.philharmonia.spb.ru/afisha/small/pc/?ev_m=9&ev_y=2026">афиша Филармонии</a><button class="primary" onclick="go('e2')">всё, организую. идём дальше</button></div>
   </div>
 </section>
 
@@ -69,9 +69,9 @@ button,.linkbtn{width:100%;border:0;border-radius:16px;padding:14px 16px;margin-
     <p class="soft">И да, там есть Домашний театр. Я его очень хочу увидеть.</p>
     <button class="primary" onclick="choose('e2','Юсуповский дворец · Парадные залы','2026-10-04T16:00:00','2026-10-04T18:00:00','Юсуповский дворец, ул. Декабристов, 21','e3')">хочу туда с тобой</button>
     <button class="secondary" onclick="alt('a2')">в этот день не могу</button> <button class="secondary" onclick="skipEvent('e2','e3')">это вообще никак</button>
-    <button class="ghost" onclick="details('d2')">давай это организую я</button>
+    <button class="ghost" onclick="organize('d2','e2','Юсуповский дворец · Парадные залы','2026-10-04T16:00:00','2026-10-04T18:00:00','Юсуповский дворец, ул. Декабристов, 21')">давай это организую я</button>
     <div id="a2" class="altbox hidden"><h3>ну ладно, господин занятой</h3><p>11 октября · 16:00<br><b>тот же дворец, другой вечер</b></p><button class="primary" onclick="choose('e2','Юсуповский дворец · Парадные залы','2026-10-11T16:00:00','2026-10-11T18:00:00','Юсуповский дворец, ул. Декабристов, 21','e3')">сюда могу</button></div>
-    <div id="d2" class="details hidden"><b>Организационная часть</b><p>Самостоятельный маршрут по парадным залам и жилым покоям: 950 ₽. Если хочется расширенную версию с покоями молодых и историей Распутина: 1300 ₽.</p><a class="linkbtn primary" target="_blank" href="https://yusupov-palace.ru/ru/programs/8">билеты во дворец</a></div>
+    <div id="d2" class="details hidden"><b>Организационная часть</b><p>Самостоятельный маршрут по парадным залам и жилым покоям: 950 ₽. Если хочется расширенную версию с покоями молодых и историей Распутина: 1300 ₽.</p><a class="linkbtn primary" target="_blank" href="https://yusupov-palace.ru/ru/programs/8">билеты во дворец</a><button class="primary" onclick="go('e3')">всё, организую. идём дальше</button></div>
   </div>
 </section>
 
@@ -85,9 +85,9 @@ button,.linkbtn{width:100%;border:0;border-radius:16px;padding:14px 16px;margin-
     <p class="soft">Короче, свидание, где мы реально что-то проживаем вместе.</p>
     <button class="primary" onclick="choose('e3','Иммерсивное шоу «Преступление. Наказание?»','2026-10-23T21:00:00','2026-10-23T23:00:00','Замок на Невском, Санкт-Петербург','e4')">это звучит интересно</button>
     <button class="secondary" onclick="alt('a3')">не могу 23-го</button> <button class="secondary" onclick="skipEvent('e3','e4')">это вообще никак</button>
-    <button class="ghost" onclick="details('d3')">давай это организую я</button>
+    <button class="ghost" onclick="organize('d3','e3','Иммерсивное шоу «Преступление. Наказание?»','2026-10-23T21:00:00','2026-10-23T23:00:00','Замок на Невском, Санкт-Петербург')">давай это организую я</button>
     <div id="a3" class="altbox hidden"><h3>есть запасной 👀</h3><p>25 октября · 19:00<br><b>тот же спектакль</b></p><button class="primary" onclick="choose('e3','Иммерсивное шоу «Преступление. Наказание?»','2026-10-25T19:00:00','2026-10-25T21:00:00','Замок на Невском, Санкт-Петербург','e4')">25-го могу</button></div>
-    <div id="d3" class="details hidden"><b>Организационная часть</b><p>Билеты от 1300 ₽ за человека.</p><a class="linkbtn primary" target="_blank" href="https://afisha.yandex.ru/saint-petersburg/concert/places/zamok-na-nevskom">посмотреть билеты</a></div>
+    <div id="d3" class="details hidden"><b>Организационная часть</b><p>Билеты от 1300 ₽ за человека.</p><a class="linkbtn primary" target="_blank" href="https://afisha.yandex.ru/saint-petersburg/concert/places/zamok-na-nevskom">посмотреть билеты</a><button class="primary" onclick="go('e4')">всё, организую. идём дальше</button></div>
   </div>
 </section>
 
@@ -126,9 +126,9 @@ button,.linkbtn{width:100%;border:0;border-radius:16px;padding:14px 16px;margin-
     <p class="soft">А дальше, думаю, разберёмся сами. 👄</p>
     <button class="primary" onclick="choose('e5','Рок-мюзикл «Дракула»','2026-11-08T19:00:00','2026-11-08T21:00:00','ДК им. Ленсовета, Каменноостровский пр., 42','bonus')">хочу этот вечер</button>
     <button class="secondary" onclick="alt('a5')">8-го не могу</button> <button class="secondary" onclick="skipEvent('e5','bonus')">это вообще никак</button>
-    <button class="ghost" onclick="details('d5')">давай это организую я</button>
+    <button class="ghost" onclick="organize('d5','e5','Рок-мюзикл «Дракула»','2026-11-08T19:00:00','2026-11-08T21:00:00','ДК им. Ленсовета, Каменноостровский пр., 42')">давай это организую я</button>
     <div id="a5" class="altbox hidden"><h3>ладно, тогда уютный ноябрь</h3><p>15 ноября · 17:00<br><b>Елагин остров + кофе</b></p><p class="tiny">Без билетов и пафоса. Просто гуляем, мёрзнем, греемся и проводим вечер вдвоём.</p><button class="primary" onclick="choose('e5','Елагин остров + кофе','2026-11-15T17:00:00','2026-11-15T20:00:00','Елагин остров, Санкт-Петербург','bonus')">вот это могу</button></div>
-    <div id="d5" class="details hidden"><b>Организационная часть</b><p>«Дракула»: билеты от 900 ₽. Длительность около двух часов.</p><a class="linkbtn primary" target="_blank" href="https://dracula-spb.ru/">билеты на «Дракулу»</a></div>
+    <div id="d5" class="details hidden"><b>Организационная часть</b><p>«Дракула»: билеты от 900 ₽. Длительность около двух часов.</p><a class="linkbtn primary" target="_blank" href="https://dracula-spb.ru/">билеты на «Дракулу»</a><button class="primary" onclick="go('bonus')">всё, организую. идём дальше</button></div>
   </div>
 </section>
 
@@ -212,6 +212,13 @@ function toast(t){const x=document.getElementById('toast');x.textContent=t;x.cla
 
 const skippedEvents=new Set();
 const dateEventIds=['e1','e2','e3','e5'];
+
+function organize(detailsId,id,title,start,end,loc){
+ skippedEvents.delete(id);
+ choices[id]={title,start,end,loc};
+ document.getElementById(detailsId).classList.remove('hidden');
+ toast('вот это мне нравится 👀 организатор');
+}
 function skipEvent(id,next){
  const selected=dateEventIds.filter(x=>choices[x]).length;
  const skipped=skippedEvents.size;
