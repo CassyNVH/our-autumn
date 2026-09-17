@@ -218,7 +218,10 @@ function go(id){
 function alt(id){document.getElementById(id).classList.toggle('hidden')}
 function details(id){document.getElementById(id).classList.toggle('hidden')}
 function choose(slot,title,start,end,loc,next){
- skippedEvents.delete(id);choices[slot]={title,start,end,loc};go(next)}
+ skippedEvents.delete(slot);
+ choices[slot]={title,start,end,loc};
+ go(next);
+}
 function bonusYes(){bonus=true;document.getElementById('bonusHint').classList.remove('hidden')}
 function renderSummary(){
  const el=document.getElementById('summary');
